@@ -1,5 +1,5 @@
 <!-- archivo global header -->
-<?php het_header(); ?>
+<?php get_header(); ?>
 <!-- desplegando posts -->
 <?php if(have_posts()): ?>
 	<section>
@@ -8,9 +8,11 @@
 				<header>
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					<time datatime="<?php the_time('Y-m-j'); ?>"><?php the_time('j F, Y'); ?></time>
+					<?php the_category(); ?>
 				</header>
 				<?php the_excerpt(); ?>
 				<footer>
+					<?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>
 					<address>Por <?php the_author_posts_link(); ?></address>
 				</footer>
 			</article>

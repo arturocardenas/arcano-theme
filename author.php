@@ -1,7 +1,9 @@
 <!-- Archivo de cabecera global de wordpress -->
 <?php get_header(); ?>
-<!-- Titulo de categoria -->
-<h2><?php single_cat_title(); ?></h2>
+<!-- Author -->
+<p>Author:<strong>
+<?php echo get_the_author(); ?>
+</strong></p>
 <!-- Listado de posts -->
 <?php if(have_posts()): ?>
 <section>
@@ -27,6 +29,6 @@
 <p><?php _e('Ups!, no hay entradas.'); ?></p>
 <?php endif; ?>
 <!-- Archivo de barra lateral por defecto -->
-<?php //get_sidebar(); ?>
+<?php get_sidebar(); ?>
 <!-- Archivo de pie global de Wordpress -->
 <?php get_footer(); ?>
