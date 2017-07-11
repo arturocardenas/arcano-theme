@@ -26,7 +26,7 @@ gulp.task('css', function() {
             loadPath: [
                 './library/sass',
                 config.bowerDir + '/bootstrap-sass/assets/stylesheets',
-                config.bowerDir + '/fontawesome/scss'
+                config.bowerDir + '/font-awesome/scss'
             ]
         })
             .on("error", notify.onError(function (error) {
