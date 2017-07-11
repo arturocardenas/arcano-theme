@@ -1,5 +1,21 @@
 <?php
-/* nav menu global */
+/* Bootstrap js */
+function bootstrap_scripts() {
+	wp_enqueue_script('emb-theme-bootstrapjs', get_template_directory_uri().'/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', array('jquery'));
+}
+add_action('wp_enqueue_scripts', 'bootstrap_scripts');
+
+/* navbar navigation walker */
+require_once('wp-bootstrap-navwalker.php');
+/* Theme setup navigation walker */
+add_action( 'after_setup_theme', 'wpt_setup' );
+    if ( ! function_exists( 'wpt_setup' ) ):
+        function wpt_setup() {  
+            register_nav_menu( 'primary', __( 'Primary navigation', 'wptuts' ) );
+        } endif;
+		
+/* nav menu global default */
+/*
 function my_menus() {
 	register_nav_menus(
 		array(
@@ -8,10 +24,9 @@ function my_menus() {
 	);
 }
 add_action('init','my_menus');
-
-/*
-	widgets
 */
+
+/* widgets */
 // barra principal sidebar
 function my_widgets(){
 	register_sidebar(
@@ -27,7 +42,7 @@ function my_widgets(){
 }
 add_action('init','my_widgets');
 
-// Barra lateral secundaria
+// Barra secundaria sidebar 2
 function registrar_sidebar(){  
   register_sidebar(array(  
    'name' => 'Sidebar de ejemplo',  
