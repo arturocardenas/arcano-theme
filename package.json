@@ -1,0 +1,26 @@
+{
+  "name": "wp-arcano-theme",
+  "version": "1.0.0",
+  "description": "Template base wordpress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturocardenas/arcano-theme.git"
+  },
+  "author": "Arturo Cardenas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arturocardenas/arcano-theme/issues"
+  },
+  "homepage": "https://github.com/arturocardenas/arcano-theme#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-bower": "0.0.13",
+    "gulp-notify": "^3.0.0",
+    "gulp-ruby-sass": "^2.1.1"
+  }
+}

@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <!-- contenido de la pagina -->
 <?php if( have_posts() ): the_post(); ?>
-	<section>
+	<section class="contenido">
 		<h1><?php the_title(); ?></h1>
 		<?php the_content(); ?>
 	</section>
