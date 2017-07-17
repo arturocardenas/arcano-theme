@@ -16,7 +16,11 @@
 				<span class="icon-bar"></span> 
 				<span class="icon-bar"></span> 
 				</button> 
-				<a class="navbar-brand" href="<?php bloginfo('url')?>"><?php bloginfo('name')?></a> 
+				<a class="navbar-brand" href="<?php bloginfo('url')?>">
+					<i class="fa fa-home" aria-hidden="true"></i>
+					<span class="glyphicon glyphicon-star"></span>
+					<?php //bloginfo('name')?>
+				</a> 
 			</div> 
 			<!-- Collect the nav links, forms, and other content for toggling --> 
 			<div class="collapse navbar-collapse navbar-ex1-collapse"> 

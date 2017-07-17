@@ -2,15 +2,73 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,300);
 $font-family-base: 'Raleway', sans-serif;
 /* Import bootstrap and fontawesome */
+@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 
-.container {
+//navbar search
+#searchform[role="search"] {
+	@extend .navbar-form;
+	div {
+		@extend .form-inline;
+		label {
+			display: none;
+		}
+		input[type="text"] {
+			@extend .form-control;
+		}
+		input[type="submit"] {
+			@extend .btn;
+			@extend .btn-default;
+		}
+	}
+}
+
+// conteiner section y aside
+#my-content {
+	@extend .container-fluid;
 	section {
-		@extend .col-sm-8;
+		@extend .col-sm-9;
+		article{
+			@extend .jumbotron;
+			padding: 10px;
+			margin-bottom:15px;
+			border:1px solid #cccccc;
+			div {
+				@extend .container;
+				header{
+					h3 {
+						@extend .col-sm-12;
+						a {
+							@extend .text-info;
+							text-decoration: none;
+						}
+					}
+					ol{
+						/*border:1px solid #cccccc;
+						background-color:#f5faff;*/
+						background-color:#eeeeee;
+					}
+				}
+				p {
+					@extend .col-sm-12;
+				}
+				footer {
+					.post-categories {
+						@extend .nav;
+						@extend .nav-pills;
+						li[role="presentation"] {
+							a{
+								//text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	aside {
-	@extend .col-sm-4;
+	@extend .col-sm-3;
 		ul{
 			@extend .list-group;
 			li{
@@ -23,8 +81,10 @@ $font-family-base: 'Raleway', sans-serif;
 				}
 			}
 		}
-	}		
+	}			
 }
+
+// Footer
 footer {
 	@extend .col-sm-12;
 }

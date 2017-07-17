@@ -1,5 +1,6 @@
 <!-- archivo global header -->
 <?php get_header(); ?>
+<div id="my-content">
 <!-- contenido del post -->
 <?php if(have_posts()):the_post(); ?>
 	<section>
@@ -17,5 +18,6 @@
 <?php endif; ?>
 <!-- archivo sidebar -->
 <?php get_sidebar(); ?>
+</div>
 <!-- archivo footer -->
 <?php get_footer(); ?>

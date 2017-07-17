@@ -1,5 +1,6 @@
 <!-- Archivo de cabecera global de wordpress -->
 <?php get_header(); ?>
+<div id="my-content">
 <!-- Titulo de categoria -->
 <h2><?php single_cat_title(); ?></h2>
 <!-- Listado de posts -->
@@ -19,8 +20,8 @@
 </article>
 <?php endwhile; ?>
 <div class="pagination">
-<span class="in-left"><?php next_posts_link('<< Entradas antiguas'); ?></span>
-<span class="in-right"><?php previous_posts_link('Entradas mas recientes >>'); ?></span>
+<span class="in-left"><?php next_posts_link('<< Anteriores'); ?></span>
+<span class="in-right"><?php previous_posts_link('Siguientes >>'); ?></span>
 </div>
 </section>
 <?php else: ?>
@@ -28,5 +29,6 @@
 <?php endif; ?>
 <!-- Archivo de barra lateral por defecto -->
 <?php //get_sidebar(); ?>
+</div>
 <!-- Archivo de pie global de Wordpress -->
 <?php get_footer(); ?>

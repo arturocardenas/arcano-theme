@@ -1,5 +1,6 @@
 <!-- Archivo de cabecera global de wordpress -->
 <?php get_header(); ?>
+<div class="container">
 <!-- Author -->
 <p>Author:<strong>
 <?php echo get_the_author(); ?>
@@ -30,5 +31,6 @@
 <?php endif; ?>
 <!-- Archivo de barra lateral por defecto -->
 <?php get_sidebar(); ?>
+</div>
 <!-- Archivo de pie global de Wordpress -->
 <?php get_footer(); ?>

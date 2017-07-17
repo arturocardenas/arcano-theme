@@ -1,4 +1,36 @@
 <?php
+/**
+ * agregar search al navbar primary solamente
+ *//*
+function wpgood_nav_search($items, $args) {
+    // If this isn't the primary menu, do nothing
+    if( !($args->theme_location == 'primary') ) 
+    return $items;
+    // Otherwise, add search form
+    return $items . '<li>' . get_search_form(false) . '</li>';
+}
+add_filter('wp_nav_menu_items', 'wpgood_nav_search', 10, 2);*/
+
+/**
+ * Add search box to nav menu's
+ */
+function wpgood_nav_search( $items, $args ) {
+    $items .= '<li>' . get_search_form( false ) . '</li>';
+    return $items;
+}
+add_filter( 'wp_nav_menu_items','wpgood_nav_search', 10, 2 );
+
+/* Disable WordPress Admin Bar for all users but admins. */
+show_admin_bar(false);
+ 
+/* Deshabilitar wordpress admin bar para todos los usuarios excepto admins *//*
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+	  show_admin_bar(false);
+	}
+}
+add_action('after_setup_theme', 'remove_admin_bar');*/
+
 /* Bootstrap js */
 function bootstrap_scripts() {
 	wp_enqueue_script('emb-theme-bootstrapjs', get_template_directory_uri().'/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js', array('jquery'));
@@ -7,7 +39,6 @@ add_action('wp_enqueue_scripts', 'bootstrap_scripts');
 
 /* navbar navigation walker */
 require_once('wp-bootstrap-navwalker.php');
-/* Theme setup navigation walker */
 add_action( 'after_setup_theme', 'wpt_setup' );
     if ( ! function_exists( 'wpt_setup' ) ):
         function wpt_setup() {  
@@ -35,8 +66,8 @@ function my_widgets(){
 			'id' => 'sidebar',
 			'before_widget' => '<aside class="widget">',
 			'after_widget' => '</aside>',
-			'before_title' => '<h2>',
-			'after_title' => '</h2>'
+			'before_title' => '<h1>',
+			'after_title' => '</h1>'
 			)
 			);
 }
