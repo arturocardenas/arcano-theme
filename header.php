@@ -7,45 +7,28 @@
 		<?php wp_head(); ?>
 	</head>
 	<body>
-		<nav class="navbar navbar-default" role="navigation"> 
-			<!-- Brand and toggle get grouped for better mobile display --> 
-			<div class="navbar-header"> 
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
-				<span class="sr-only">Toggle navigation</span> 
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span> 
-				</button> 
-				<a class="navbar-brand" href="<?php bloginfo('url')?>">
-					<i class="fa fa-home" aria-hidden="true"></i>
-					<span class="glyphicon glyphicon-star"></span>
-					<?php //bloginfo('name')?>
-				</a> 
-			</div> 
-			<!-- Collect the nav links, forms, and other content for toggling --> 
-			<div class="collapse navbar-collapse navbar-ex1-collapse"> 
-			<?php /* Primary navigation */
-				wp_nav_menu( array(
-				'menu' => 'top_menu',
-				'depth' => 2,
-				'container' => true,
-				'menu_class' => 'nav navbar-nav',
-				//Process nav menu using our custom nav walker
-				'walker' => new wp_bootstrap_navwalker())
-				);
-			?> 	
-			 <ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Mensajes</a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mi Cuenta <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Pendientes</a></li>
-						<li><a href="#">Movimientos</a></li>
-						<li><a href="#">Configuracion</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Cerrar Sesion</a></li>
-					</ul>
-				</li>
-			 </ul>	
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 			</div>
-		</nav>
+			<?php 
+				wp_nav_menu( array(
+					'menu'              => 'primary',
+					'theme_location'    => 'primary',
+					'depth'             => 2,
+					'container'         => 'div',
+					'container_class'   => 'collapse navbar-collapse',
+					'container_id'      => 'bs-example-navbar-collapse-1',
+					'menu_class'        => 'nav navbar-nav',
+					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'            => new WP_Bootstrap_Navwalker())
+				);
+			?>
+		</div>
+	</nav>

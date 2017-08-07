@@ -6,6 +6,11 @@ $font-family-base: 'Raleway', sans-serif;
 @import "bootstrap";
 @import "font-awesome";
 
+.widget_search {
+	display: inline-block;
+	@extend .pull-right;
+}
+
 //navbar search
 #searchform[role="search"] {
 	@extend .navbar-form;
@@ -26,7 +31,17 @@ $font-family-base: 'Raleway', sans-serif;
 
 // conteiner section y aside
 #my-content {
-	@extend .container-fluid;
+	@extend .container;
+	table {
+		@extend .table;
+		@extend .table-hover;
+		@extend .table-striped;
+		thead, tfoot {
+			tr {
+				@extend .info;
+			}
+		}
+	}
 	section {
 		@extend .col-sm-9;
 		article{

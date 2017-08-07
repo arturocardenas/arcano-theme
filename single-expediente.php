@@ -1,7 +1,11 @@
-<!-- archivo global header -->
-<?php get_header(); ?>
+<?php
+/*
+	Template Name: Single Expediente
+*/
+get_header(); 
+?>
+<h1>POST</h1>
 <div id="my-content">
-<h1>POST2</h1>
 <!-- contenido del post -->
 <?php if(have_posts()):the_post(); ?>
 	<section>
@@ -11,8 +15,12 @@
 		<?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>
 		<address>Por <?php the_author_posts_link() ?></address>
 		<?php the_category(); ?>
-		<!-- Comments -->
-		<?php comments_template(); ?>
+		<?php $key_1_value = get_post_meta( get_the_ID(), 'expediente_telefono', true );
+			// Check if the custom field has a value.
+			if ( ! empty( $key_1_value ) ) {
+				echo $key_1_value;
+			}
+		?>
 	</section>
 <?php else: ?>
 	<p><?php _e('Ups!, esta entrada no existe.'); ?></p>
